@@ -3,16 +3,17 @@
 wget --quiet -P /tmp http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.0.tar.gz
 
 pushd /tmp
+TAR_FILE=ruby-${TAG}.tar.gz
 
-tar xzf ruby-2.1.0.tar.gz
-pushd ruby-2.1.0
+tar xzf $TAR_FILE
+pushd ${TAR_FILE%.*.*}
 ./configure --prefix=$PREFIX
 make && make install || exit 1
 
 popd
-rm -rf ruby-2.1.0
-popd
+rm -rf $TAR_FILE ${TAR_FILE%.*.*}
 
+popd
 cat << 'EOF' > ~/.gemrc
 ---
 :update_sources: true
