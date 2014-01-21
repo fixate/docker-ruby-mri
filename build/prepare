@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 apt-get update
-xargs apt-get install -y --force-yes < packages.txt
+xargs apt-get install -y --force-yes < /build/mri/packages.txt
 apt-get clean
