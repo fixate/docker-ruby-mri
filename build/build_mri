@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
 
 wget --quiet -P /tmp http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.0.tar.gz
 

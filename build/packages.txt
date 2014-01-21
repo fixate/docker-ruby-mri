@@ -1,0 +1,16 @@
+build-essential
+wget
+libtool
+zlib1g
+zlib1g-dev
+libssl-dev
+libreadline6
+libreadline6-dev
+libyaml-dev
+ncurses-dev
+libgdbm-dev
+libpq-dev
+libffi-dev
+git
+autoconf
+bison

@@ -2,11 +2,10 @@ FROM ubuntu:12.04
 MAINTAINER Stan Bondi <stan@fixate.it>
 
 # Install dependencies
-ADD install_deps.sh /opt/fixate/install_deps
-RUN /opt/fixate/install_deps
+ADD ./build/ /build/mri/
+RUN /build/mri/prepare
 
 # Install mri
-ADD install_mri.sh /opt/fixate/install_mri
-RUN PREFIX=/usr/local/ruby TAG=2.1.0 /opt/fixate/install_mri
+RUN PREFIX=/usr/local/ruby TAG=2.1.0 /build/mri/build_mri
 
 ENV PATH /usr/local/ruby/bin:$PATH
